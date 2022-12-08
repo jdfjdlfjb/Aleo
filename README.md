@@ -31,25 +31,25 @@ grep "prover" /etc/systemd/system/aleo-prover.service | awk '{print $5}'
 journalctl -u aleo-prover -f -o cat
 ```
 
-Перевірити логи клієнта (якщо запущений):
+## Перевірити логи клієнта (якщо запущений):
 ```
 journalctl -u aleo-client -f -o cat
 ```
 
 
-Зупинити aleo прувер і запустити aleo клієнт.
+## Зупинити aleo прувер і запустити aleo клієнт.
 ```
 systemctl stop aleo-prover
 systemctl restart aleo-client
 ```
 
-Запуск прувера (Уже запущений після встановлення).
+## Запуск прувера (Уже запущений після встановлення).
 ```
 systemctl stop aleo-client
 systemctl restart aleo-prover
 ```
 
-Видалити snarkos і всі інсталяційні файли, включно з адресами майнера.
+## Видалити snarkos і всі інсталяційні файли, включно з адресами майнера.
 ```
 wget -q -O aleo_remove_snarkos.sh https://api.nodes.guru/aleo_remove_snarkos2.sh && chmod +x aleo_remove_snarkos.sh && sudo /bin/bash aleo_remove_snarkos.sh
 ```
